@@ -11,7 +11,7 @@ $ gclone creaturephil/markus
 
 ## Documentaion
 
-### gclone <repo or variable> [optional - name]
+### gclone (repo or variable) [optional - name]
 
 Clones the repo as the repo name or to a given name.
 
