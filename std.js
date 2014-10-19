@@ -4,6 +4,17 @@ var file = __dirname + '/.gclone';
 
 var std = {
 
+  /**
+   * in - Reads a file and returns the repo.
+   * @name: Name of the repo or variable.
+   * @cb: Callback called that returns the repo if found.
+   *
+   * Example: 
+   *    std.in('underscore', function(repo) {
+   *      if (!repo) // handle error 
+   *      // do something with the repo
+   *    });
+   */
   in: function(name, cb) {
     fs.exists(file, function (exists) {
       if(!exists) fs.writeFileSync(file);
@@ -23,6 +34,18 @@ var std = {
     });
   },
 
+  /**
+   * out - Writes to a file.
+   * @name: Variable name.
+   * @url: The name of the repository.
+   * @remove: If the variable name should be remove or not.
+   * @cb: Callback
+   *
+   * Example: 
+   *    std.out('markus', 'creaturephil/markus', false, function() {
+   *      // do something
+   *    });
+   */
   out: function(name, url, remove, cb) {
     fs.exists(file, function (exists) {
       if(!exists) fs.writeFileSync(file);

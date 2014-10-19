@@ -118,9 +118,9 @@ function run() {
     return gclone[arg](program.args);
   }
 
-  std.in(arg, function(data) {
-    if (!data) return help();
-    gclone['clone'](data, program.args.shift());
+  std.in(arg, function(repo) {
+    if (!repo) return help();
+    gclone['clone'](repo, program.args.shift());
   });
 }
 
