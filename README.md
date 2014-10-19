@@ -15,7 +15,7 @@ $ gclone creaturephil/markus
 
 Clones the repo as the repo name or to a given name.
 
-#### Example
+###### Example
 
 ```bash
 $ gclone npm/npm
@@ -26,7 +26,7 @@ $ gclone variable
 
 Saves a variable to a repo for later use.
 
-#### Example
+###### Example
 
 ```bash
 $ gclone set variable variable/repo
@@ -37,7 +37,7 @@ $ gclone set express strongloop/express
 
 List all variables set.
 
-#### Example
+###### Example
 
 ```bash
 $ gclone list
@@ -47,7 +47,7 @@ $ gclone list
 
 Remove a variable.
 
-#### Example
+###### Example
 
 ```bash
 $ gclone remove variable
