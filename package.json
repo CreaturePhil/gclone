@@ -23,6 +23,6 @@
     "gclone": "./gclone"
   },
   "dependencies": {
-    "commander": "^2.4.0"
+    "commander": "~2.4.0"
   }
 }
