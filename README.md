@@ -1,0 +1,3 @@
+# gclone
+
+Better git clone.
