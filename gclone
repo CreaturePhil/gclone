@@ -23,8 +23,20 @@ var gclone = (function() {
   module.set = set;
   module.remove = remove;
   
-  function clone(arg, dir) {
-    var parts = arg.split('/');
+  /**
+   * clone - Clones a repo to a directory.
+   * @repo: The (possibly remote) repository to clone from. Could also be a variable referencing a repo.
+   * @dir: The name of a new directory to clone into. 
+   *       The repo name is used if no directory is explicitly given.
+   *       Cloning into an existing directory is only allowed if the directory is empty.
+   *
+   * Examples: 
+   *    clone('creaturephil/gclone', '');
+   *    clone('creaturephil/gclone', 'gclone-master');
+   *    clone(express, 'express'); // express variable references to strongloop/express
+   */
+  function clone(repo, dir) {
+    var parts = repo.split('/');
     var cmd = 'git clone https://github.com/' + parts[0] + '/' + parts[1] + '.git'; 
     if (!dir) {
       console.log('Cloning into \'' + parts[1] + '\'...');
@@ -41,6 +53,9 @@ var gclone = (function() {
     }
   }
 
+  /**
+   * list - List all variables set.
+   */
   function list() {
     var file = __dirname + '/.gclone';
     var list = [];
@@ -56,6 +71,14 @@ var gclone = (function() {
     });
   }
 
+  /**
+   * set - Sets a variable to a repo.
+   * @arg: An array that contains the variable name at index 0 and the repo at index 1.
+   *
+   * Examples: 
+   *    set(['markus', 'creaturephil/markus']);
+   *    set(['express', 'strongloop/express']);
+   */
   function set(arg) {
     var name = arg.shift();
     var url = arg.shift();
@@ -64,9 +87,16 @@ var gclone = (function() {
     });
   }
 
+  /**
+   * remove - Remove a variable set.
+   * @arg: An array that contains the variable name at index 0.
+   *
+   * Examples: 
+   *    remove(['markus']);
+   *    remove(['express']);
+   */
   function remove(arg) {
     var name = arg.shift();
-    var url = arg.shift();
     std.out(name, '', true, function() {
       console.log('\n' + name + ' is remove.');
     });
