@@ -1,0 +1,28 @@
+{
+  "name": "gclone",
+  "version": "0.1.0",
+  "description": "Better git clone.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/creaturephil/gclone"
+  },
+  "keywords": [
+    "git",
+    "github",
+    "clone",
+    "repo",
+    "repository"
+  ],
+  "author": "Philip La <birkal@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/creaturephil/gclone/issues"
+  },
+  "homepage": "https://github.com/creaturephil/gclone",
+  "bin": {
+    "gclone": "./gclone"
+  },
+  "dependencies": {
+    "commander": "^2.4.0"
+  }
+}
